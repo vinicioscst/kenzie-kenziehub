@@ -6,9 +6,13 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../../../services/api";
+import { loginFormSchema } from "./loginFormSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const LoginForm = () => {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: zodResolver(loginFormSchema),
+  })
 
   const navigate = useNavigate()
 
@@ -35,8 +39,8 @@ const LoginForm = () => {
     <StyledLoginFormContainer>
       <StyledTitle1>Login</StyledTitle1>
       <StyledForm onSubmit={handleSubmit(submit)} noValidate>
-        <Input label="Email" type="email" placeholder="Digite aqui seu email" {...register("email")}/>
-        <Input label="Senha" type="password" placeholder="Digite aqui sua senha" {...register("password")}/>
+        <Input label="Email" type="email" placeholder="Digite aqui seu email" {...register("email")} error={errors.email}/>
+        <Input label="Senha" type="password" placeholder="Digite aqui sua senha" {...register("password")} error={errors.password}/>
         <StyledButtonLg buttoncolor="primary" type="submit">Entrar</StyledButtonLg>
       </StyledForm>
       <StyledFormFooter>
