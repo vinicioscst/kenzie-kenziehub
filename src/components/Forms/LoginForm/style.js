@@ -32,4 +32,8 @@ export const StyledFormFooter = styled.div`
     margin-top: 1.2rem;
     align-self: center;
   }
+
+  & button {
+    width: 100%;
+  }
 `

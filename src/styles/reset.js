@@ -14,7 +14,7 @@ export const GlobalReset = createGlobalStyle`
         border: 0;
     }
 
-    input, textarea, fieldset {
+    input, textarea, select, fieldset {
         border: 0;
         outline: 0;
     }

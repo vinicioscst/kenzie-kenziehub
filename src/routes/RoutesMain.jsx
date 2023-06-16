@@ -4,7 +4,7 @@ import Register from "../pages/Register"
 import Home from "../pages/Home"
 
 
-function RoutesMain() {
+const RoutesMain = () => {
     return (
         <Routes>
             <Route path="/" element={<Login />} />

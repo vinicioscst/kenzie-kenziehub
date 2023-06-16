@@ -1,10 +1,10 @@
 import Logo from "../../assets/logo.svg";
-import LoginForm from "../../components/LoginForm";
+import LoginForm from "../../components/Forms/LoginForm";
 import { StyledLoginContainer } from "./style";
 
-function Login() {
+const Login = () => {
   return (
-    <StyledLoginContainer maxwidth="370">
+    <StyledLoginContainer maxwidth={`calc(370px + 2.4rem)`}>
       <img src={Logo} alt="Kenzie Hub" />
       <LoginForm />
     </StyledLoginContainer>

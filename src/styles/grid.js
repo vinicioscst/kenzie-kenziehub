@@ -6,7 +6,7 @@ export const StyledContainer = styled.div`
     align-items: center;
 
     width: 100%;
-    max-width: ${({maxwidth}) => maxwidth ? maxwidth : 1200}px;
+    max-width: ${({maxwidth}) => maxwidth ? maxwidth : "1200px"};
     margin: 0 auto;
     padding: 1.2rem;
 `

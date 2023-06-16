@@ -18,50 +18,8 @@ export const ButtonStyles = css`
   }
 `;
 
-export const StyledButtonLg = styled.button`
-  ${ButtonStyles};
-  padding: 1.5rem 2.2rem;
-
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #ffffff;
-
-  ${({ buttoncolor }) => {
-    switch (buttoncolor) {
-      case "primary":
-        return css`
-          background: var(--color-primary);
-
-          &:hover {
-            background: var(--color-primary-50);
-          }
-
-          &:disabled {
-            background: var(--color-primary-disabled);
-          }
-        `;
-
-      case "default":
-        return css`
-          background: var(--color-gray-1);
-
-          &:hover {
-            background: var(--color-gray-2);
-          }
-
-          &:disabled {
-            background: var(--color-gray-4);
-          }
-        `;
-    }
-  }}
-`;
-
-export const StyledButtonMd = styled.button`
-  ${ButtonStyles};
-
+export const MdButtonStyles = css`
   background: var(--color-gray-3);
-  padding: 0 1.6rem;
 
   font-size: 1.2rem;
   font-weight: 600;
@@ -73,6 +31,74 @@ export const StyledButtonMd = styled.button`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const LgButtonStyles = css`
+  padding: 1.5rem 2.2rem;
+
+font-size: 1.6rem;
+font-weight: 500;
+color: #ffffff;
+
+${({ buttoncolor }) => {
+  switch (buttoncolor) {
+    case "primary":
+      return css`
+        background: var(--color-primary);
+
+        &:hover {
+          background: var(--color-primary-50);
+        }
+
+        &:disabled {
+          background: var(--color-primary-disabled);
+        }
+      `;
+
+    case "default":
+      return css`
+        background: var(--color-gray-1);
+
+        &:hover {
+          background: var(--color-gray-2);
+        }
+
+        &:disabled {
+          background: var(--color-gray-4);
+        }
+      `;
+  }
+}}
+`
+
+export const StyledButtonLg = styled.button`
   ${ButtonStyles};
+  ${LgButtonStyles}
+`;
+
+export const StyledLinkLg = styled(Link)`
+  ${ButtonStyles};
+  ${LgButtonStyles}
+`;
+
+export const StyledButtonMd = styled.button`
+  ${ButtonStyles};
+  ${MdButtonStyles}
+  padding: 1.15rem 1.6rem;
+`;
+
+export const StyledLinkMd = styled(Link)`
+  ${ButtonStyles};
+  ${MdButtonStyles}
+  padding: 1.15rem 1.6rem;
+`;
+
+export const StyledButtonIconMd = styled.button`
+  ${ButtonStyles};
+  ${MdButtonStyles}
+  padding: 1.15rem;
+`;
+
+export const StyledLinkIconMd = styled(Link)`
+  ${ButtonStyles};
+  ${MdButtonStyles}
+  padding: 1.15rem;
 `;

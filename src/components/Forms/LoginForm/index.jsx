@@ -1,9 +1,9 @@
-import { StyledTitle1, StyledHeadlineBold } from "../../styles/typography";
-import { StyledButtonLg } from "../../styles/buttons";
-import Input from "../Input";
+import { StyledTitle1, StyledHeadlineBold } from "../../../styles/typography";
+import { StyledButtonLg, StyledLinkLg } from "../../../styles/buttons";
+import Input from "../../Input";
 import { StyledForm, StyledFormFooter, StyledLoginFormContainer } from "./style";
 
-function LoginForm() {
+const LoginForm = () => {
   return (
     <StyledLoginFormContainer>
       <StyledTitle1>Login</StyledTitle1>
@@ -14,7 +14,7 @@ function LoginForm() {
       </StyledForm>
       <StyledFormFooter>
         <StyledHeadlineBold>Ainda não possui uma conta?</StyledHeadlineBold>
-        <StyledButtonLg buttoncolor="default">Cadastre-se</StyledButtonLg>
+        <StyledLinkLg to="/register" buttoncolor="default">Cadastre-se</StyledLinkLg>
       </StyledFormFooter>
     </StyledLoginFormContainer>
   );

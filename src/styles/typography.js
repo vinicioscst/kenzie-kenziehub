@@ -54,4 +54,13 @@ export const StyledLabel = styled.label`
     font-size: 1.2rem;
     line-height: 1.8rem;
     font-weight: 400;
+    color: var(--color-gray-0);
+`;
+
+export const StyledHelperText = styled.p`
+    ${TextDefaultStyles}
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: var(--color-gray-1);
 `;
