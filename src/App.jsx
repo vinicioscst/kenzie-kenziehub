@@ -12,7 +12,7 @@ const App = () => {
       <GlobalReset />
       <GlobalStyles />
       <RoutesMain />
-      <ToastContainer autoClose={2000} theme="dark" />
+      <ToastContainer theme="dark" />
     </>
   )
 }

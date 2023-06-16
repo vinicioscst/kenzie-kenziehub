@@ -19,13 +19,13 @@ const RegisterForm = () => {
 
   const userRegister = async (formData) => {
     try {
-      console.log(formData)
       const response = await api.post("/users", formData)
-      console.log(response)
-      toast.success("Conta criada com sucesso!")
+      toast.success("Conta criada com sucesso!", {
+        autoClose: 2000
+      })
       setTimeout(() => {
         navigate("/")
-      }, "2000")
+      }, "3000")
     } catch (error) {
       toast.error(`${error}`)
     }
