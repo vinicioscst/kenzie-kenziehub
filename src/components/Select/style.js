@@ -1,17 +1,16 @@
 import { styled } from "styled-components";
 
-
 export const StyledFieldset = styled.fieldset`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-`
+`;
 
 export const StyledSelect = styled.select`
   background: var(--color-gray-2);
   width: 100%;
   padding: 1rem 1.6rem;
-  
+
   border: 1.22px solid transparent;
   border-radius: 4px;
 
@@ -29,4 +28,4 @@ export const StyledSelect = styled.select`
     border: 1.22px solid var(--color-gray-0);
     color: var(--color-gray-0);
   }
-`
+`;

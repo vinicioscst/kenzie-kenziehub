@@ -13,6 +13,6 @@ const Register = () => {
       <RegisterForm />
     </StyledRegisterContainer>
   );
-}
+};
 
 export default Register;

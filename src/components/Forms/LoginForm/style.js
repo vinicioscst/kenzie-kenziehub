@@ -3,7 +3,7 @@ import { css, styled } from "styled-components";
 export const StyledFlex = css`
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const StyledLoginFormContainer = styled.div`
   ${StyledFlex}
@@ -17,12 +17,12 @@ export const StyledLoginFormContainer = styled.div`
   & h1 {
     align-self: center;
   }
-`
+`;
 
 export const StyledForm = styled.form`
   ${StyledFlex}
   gap: 20px;
-`
+`;
 
 export const StyledFormFooter = styled.div`
   ${StyledFlex}
@@ -36,4 +36,4 @@ export const StyledFormFooter = styled.div`
   & button {
     width: 100%;
   }
-`
+`;

@@ -24,4 +24,4 @@ export const GlobalStyles = createGlobalStyle`
         background: var(--color-gray-4);
         color: var(--color-gray-1);
     }
-`
+`;

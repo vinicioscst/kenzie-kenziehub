@@ -8,7 +8,7 @@ export const ButtonStyles = css`
   gap: 0.5rem;
 
   border-radius: 4px;
-  
+
   font-size: 1.125rem;
 
   transition: 0.2s;
@@ -34,40 +34,40 @@ export const MdButtonStyles = css`
 export const LgButtonStyles = css`
   padding: 1.5rem 2.2rem;
 
-font-size: 1.6rem;
-font-weight: 500;
-color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #ffffff;
 
-${({ buttoncolor }) => {
-  switch (buttoncolor) {
-    case "primary":
-      return css`
-        background: var(--color-primary);
+  ${({ buttoncolor }) => {
+    switch (buttoncolor) {
+      case "primary":
+        return css`
+          background: var(--color-primary);
 
-        &:hover {
-          background: var(--color-primary-50);
-        }
+          &:hover {
+            background: var(--color-primary-50);
+          }
 
-        &:disabled {
-          background: var(--color-primary-disabled);
-        }
-      `;
+          &:disabled {
+            background: var(--color-primary-disabled);
+          }
+        `;
 
-    case "default":
-      return css`
-        background: var(--color-gray-1);
+      case "default":
+        return css`
+          background: var(--color-gray-1);
 
-        &:hover {
-          background: var(--color-gray-2);
-        }
+          &:hover {
+            background: var(--color-gray-2);
+          }
 
-        &:disabled {
-          background: var(--color-gray-4);
-        }
-      `;
-  }
-}}
-`
+          &:disabled {
+            background: var(--color-gray-4);
+          }
+        `;
+    }
+  }}
+`;
 
 export const StyledButtonLg = styled.button`
   ${ButtonStyles};

@@ -7,17 +7,16 @@ import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 
 const App = () => {
-
   const [userData, setUserData] = useState(null);
 
   return (
     <>
       <GlobalReset />
       <GlobalStyles />
-      <RoutesMain userData={userData} setUserData={setUserData}/>
+      <RoutesMain userData={userData} setUserData={setUserData} />
       <ToastContainer theme="dark" />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
