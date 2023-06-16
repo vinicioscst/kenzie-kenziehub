@@ -3,31 +3,10 @@ import Logo from "../../assets/logo.svg";
 import { StyledButtonMd } from "../../styles/buttons";
 import { toast } from "react-toastify";
 import { StyledHomeContentContainer, StyledHomeHeaderContainer, StyledHomeUserContainer, StyledHomeH1, StyledHomeUserSection, StyledHomeH2 } from "./style";
-import { useEffect, useState } from "react";
 import { StyledHeadline } from "../../styles/typography";
-import { api } from "../../services/api"
 
 
-const Home = () => {
-
-    const [userData, setUserData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true) 
-
-    useEffect(() => {
-
-        const getUser = async () => {
-            const userInfo = JSON.parse(localStorage.getItem("@KENZIEHUB"))
-            try {
-                const {data} = await api.get(`/users/${userInfo.user.id}`)
-                setUserData(data)
-            } catch (error) {
-                toast.error(`${error}`)
-            } finally {
-                setIsLoading(false)
-            }
-        }
-        getUser()
-    }, [])
+const Home = ({userData, setUserData}) => {
 
     const navigate = useNavigate()
 
@@ -37,14 +16,9 @@ const Home = () => {
         })
       setTimeout(() => {
         localStorage.clear()
+        setUserData(null)
         navigate("/")
       }, "3000")
-    }
-
-    if(isLoading) {
-        return (
-            ""
-        )
     }
 
   return (

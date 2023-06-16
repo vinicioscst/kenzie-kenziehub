@@ -1,9 +1,18 @@
-import { css, styled } from "styled-components";
+import { css, keyframes, styled } from "styled-components";
 import { StyledHeadline, StyledTitle1 } from "../../../styles/typography";
 
 export const StyledFlex = css`
   display: flex;
   flex-direction: column;
+`
+
+const rotation = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 `
 
 export const StyledRegisterFormContainer = styled.div`

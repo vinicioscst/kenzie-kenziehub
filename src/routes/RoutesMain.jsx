@@ -4,12 +4,12 @@ import Register from "../pages/Register"
 import Home from "../pages/Home"
 
 
-const RoutesMain = () => {
+const RoutesMain = ({userData, setUserData}) => {
     return (
         <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Login userData={userData} setUserData={setUserData}/>} />
             <Route path="/register" element={<Register />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home userData={userData} setUserData={setUserData}/>} />
         </Routes>
     )
 }
