@@ -1,7 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.svg";
 import { StyledButtonMd } from "../../styles/buttons";
-import { toast } from "react-toastify";
 import {
   StyledHomeContentContainer,
   StyledHomeHeaderContainer,
@@ -11,26 +9,17 @@ import {
   StyledHomeH2,
 } from "./style";
 import { StyledHeadline } from "../../styles/typography";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
 
-const Home = ({ userData, setUserData }) => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    toast.success("Logout efetuado com sucesso!", {
-      autoClose: 2000,
-    });
-    setTimeout(() => {
-      localStorage.clear();
-      setUserData(null);
-      navigate("/");
-    }, "3000");
-  };
+const Home = () => {
+  const { userData, userLogout } = useContext(UserContext)
 
   return (
     <>
       <StyledHomeHeaderContainer maxwidth={`calc(770px + 2.4rem)`}>
         <img src={Logo} alt="Kenzie Hub" />
-        <StyledButtonMd onClick={handleLogout}>Sair</StyledButtonMd>
+        <StyledButtonMd onClick={userLogout}>Sair</StyledButtonMd>
       </StyledHomeHeaderContainer>
 
       <StyledHomeUserSection>

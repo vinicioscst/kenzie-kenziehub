@@ -10,7 +10,7 @@ const Register = () => {
         <img src={Logo} alt="Kenzie Hub" />
         <StyledLinkMd to="/">Voltar</StyledLinkMd>
       </StyledContainerHeader>
-      <RegisterForm />
+        <RegisterForm />
     </StyledRegisterContainer>
   );
 };

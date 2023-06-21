@@ -7,15 +7,14 @@ import {
   StyledLoginFormContainer,
 } from "./style";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import { api } from "../../../services/api";
 import { loginFormSchema } from "./loginFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import UseAnimations from "react-useanimations";
 import loading from "react-useanimations/lib/loading";
+import { UserContext } from "../../../providers/UserContext";
+import { useContext } from "react";
 
-const LoginForm = ({ setUserData, isLoading, setIsLoading }) => {
+const LoginForm = () => {
   const {
     register,
     handleSubmit,
@@ -24,33 +23,7 @@ const LoginForm = ({ setUserData, isLoading, setIsLoading }) => {
     resolver: zodResolver(loginFormSchema),
   });
 
-  const navigate = useNavigate();
-
-  const userLogin = async (formData) => {
-    try {
-      setIsLoading(true);
-      const response = await api.post("/sessions", formData);
-      localStorage.setItem(
-        "KENZIEHUB@TOKEN",
-        JSON.stringify(response.data.token)
-      );
-      localStorage.setItem(
-        "KENZIEHUB@USERID",
-        JSON.stringify(response.data.user.id)
-      );
-      setUserData(response.data.user);
-      toast.success("Login efetuado com sucesso!", {
-        autoClose: 2000,
-      });
-      setTimeout(() => {
-        navigate("/home");
-      }, "3000");
-    } catch (error) {
-      toast.error(`${error}`);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const { userLogin, isLoading } = useContext(UserContext)
 
   const submit = (formData) => {
     userLogin(formData);

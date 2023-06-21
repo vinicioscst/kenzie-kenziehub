@@ -10,9 +10,8 @@ import Select from "../../Select";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerFormSchema";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../../services/api";
+import { useContext } from "react";
+import { UserContext } from "../../../providers/UserContext";
 
 const RegisterForm = () => {
   const {
@@ -23,21 +22,7 @@ const RegisterForm = () => {
     resolver: zodResolver(registerFormSchema),
   });
 
-  const navigate = useNavigate();
-
-  const userRegister = async (formData) => {
-    try {
-      const response = await api.post("/users", formData);
-      toast.success("Conta criada com sucesso!", {
-        autoClose: 2000,
-      });
-      setTimeout(() => {
-        navigate("/");
-      }, "3000");
-    } catch (error) {
-      toast.error(`${error}`);
-    }
-  };
+  const { userRegister } = useContext(UserContext)
 
   const submit = (formData) => {
     userRegister(formData);
