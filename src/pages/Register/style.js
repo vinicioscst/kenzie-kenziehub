@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 import { StyledContainer } from "../../styles/grid";
 
-export const StyledRegisterContainer = styled(StyledContainer)`
+export const StyledRegisterContainer = styled.div`
+  ${StyledContainer}
   margin-top: calc(80px - 1.2rem);
   gap: clamp(2rem, 4vw, 3.5rem);
 `;

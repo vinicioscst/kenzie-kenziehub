@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import { css } from "styled-components";
 
-export const StyledContainer = styled.div`
+export const StyledContainer = css`
   display: flex;
   flex-direction: column;
   align-items: center;

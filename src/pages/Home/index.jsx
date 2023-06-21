@@ -2,10 +2,10 @@ import Logo from "../../assets/logo.svg";
 import { StyledButtonMd } from "../../styles/buttons";
 import {
   StyledHomeContentContainer,
-  StyledHomeHeaderContainer,
+  StyledHomeNavbarContainer,
   StyledHomeUserContainer,
   StyledHomeH1,
-  StyledHomeUserSection,
+  StyledHomeHeaderSection,
   StyledHomeH2,
 } from "./style";
 import { StyledHeadline } from "../../styles/typography";
@@ -17,17 +17,17 @@ const Home = () => {
 
   return (
     <>
-      <StyledHomeHeaderContainer maxwidth={`calc(770px + 2.4rem)`}>
+      <StyledHomeNavbarContainer maxwidth={`calc(770px + 2.4rem)`}>
         <img src={Logo} alt="Kenzie Hub" />
         <StyledButtonMd onClick={userLogout}>Sair</StyledButtonMd>
-      </StyledHomeHeaderContainer>
+      </StyledHomeNavbarContainer>
 
-      <StyledHomeUserSection>
+      <StyledHomeHeaderSection>
         <StyledHomeUserContainer maxwidth={`calc(770px + 2.4rem)`}>
           <StyledHomeH1>Olá, {userData.name}</StyledHomeH1>
           <StyledHeadline>{userData.course_module}</StyledHeadline>
         </StyledHomeUserContainer>
-      </StyledHomeUserSection>
+      </StyledHomeHeaderSection>
 
       <StyledHomeContentContainer maxwidth={`calc(770px + 2.4rem)`}>
         <StyledHomeH1>Que pena! Estamos em desenvolvimento :(</StyledHomeH1>

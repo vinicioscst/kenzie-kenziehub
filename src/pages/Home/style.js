@@ -9,17 +9,19 @@ const FlexAdjustments = css`
   flex-wrap: wrap;
 `;
 
-export const StyledHomeHeaderContainer = styled(StyledContainer)`
+export const StyledHomeNavbarContainer = styled.nav`
+  ${StyledContainer}
   ${FlexAdjustments}
   padding: 2rem 1.2rem;
 `;
 
-export const StyledHomeUserSection = styled.section`
+export const StyledHomeHeaderSection = styled.header`
   border-top: 1px solid var(--color-gray-3);
   border-bottom: 1px solid var(--color-gray-3);
 `;
 
-export const StyledHomeUserContainer = styled(StyledContainer)`
+export const StyledHomeUserContainer = styled.div`
+  ${StyledContainer}
   ${FlexAdjustments}
   padding: 4.5rem 1.2rem;
 `;
@@ -33,7 +35,8 @@ export const StyledHomeH2 = styled(StyledTitle2)`
   font-weight: 400;
 `;
 
-export const StyledHomeContentContainer = styled(StyledContainer)`
+export const StyledHomeContentContainer = styled.main`
+  ${StyledContainer}
   padding: 3.7rem 1.2rem;
   gap: 2.3rem;
   align-items: flex-start;
