@@ -1,6 +1,6 @@
 import { css, styled } from "styled-components";
 import { StyledContainer } from "../../styles/grid";
-import { StyledTitle1, StyledTitle2 } from "../../styles/typography";
+import { StyledTitle1 } from "../../styles/typography";
 
 const FlexAdjustments = css`
   flex-direction: row;
@@ -28,11 +28,6 @@ export const StyledHomeUserContainer = styled.div`
 
 export const StyledHomeH1 = styled(StyledTitle1)`
   color: var(--color-gray-0);
-`;
-
-export const StyledHomeH2 = styled(StyledTitle2)`
-  color: var(--color-gray-0);
-  font-weight: 400;
 `;
 
 export const StyledHomeContentContainer = styled.main`

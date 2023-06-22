@@ -20,7 +20,7 @@ const UserProvider = ({children}) => {
           });
           navigate("/")
         } catch (error) {
-          toast.error(`${error}`);
+          toast.error(`${error.response.data.message}`);
         }
     };
 
@@ -42,7 +42,7 @@ const UserProvider = ({children}) => {
           });
           navigate("/home")
         } catch (error) {
-          toast.error(`${error}`);
+          toast.error(`${error.response.data.message}`);
         } finally {
           setIsLoading(false);
         }
