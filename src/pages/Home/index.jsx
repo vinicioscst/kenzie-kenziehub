@@ -20,7 +20,6 @@ const Home = () => {
   const { userData, userLogout } = useContext(UserContext);
   const { setIsAdding, setIsEditing, setCurrentTech } = useContext(TechContext);
 
-
   useEffect(() => {
     document.title = "Kenzie Hub | Home";
   }, []);
@@ -43,8 +42,8 @@ const Home = () => {
 
       <StyledHomeHeaderSection>
         <StyledHomeUserContainer maxwidth={`calc(770px + 2.4rem)`}>
-          <StyledHomeH1>Olá, {userData.name}</StyledHomeH1>
-          <StyledHeadline>{userData.course_module}</StyledHeadline>
+          <StyledHomeH1>Olá, {userData?.name}</StyledHomeH1>
+          <StyledHeadline>{userData?.course_module}</StyledHeadline>
         </StyledHomeUserContainer>
       </StyledHomeHeaderSection>
 

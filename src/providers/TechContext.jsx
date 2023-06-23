@@ -18,8 +18,8 @@ const TechProvider = ({children}) => {
     const { userData } = useContext(UserContext)
 
     useEffect(() => {
-        setTechList(userData.techs)
-    }, [])
+        setTechList(userData?.techs)
+    }, [userData])
 
     const {
         register,
@@ -56,7 +56,7 @@ const TechProvider = ({children}) => {
         const techId = currentTech.id
         try {
             const token = JSON.parse(localStorage.getItem("KENZIEHUB@TOKEN"))
-            
+
             await api.put(`/users/techs/${techId}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`

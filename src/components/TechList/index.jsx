@@ -32,7 +32,7 @@ const TechList = () => {
 
       <StyledTechListSection>
         <ul>
-          {techList.map((tech) => {
+          {techList?.map((tech) => {
             return (
               <TechCard key={tech.id} tech={tech} openEditModal={openEditModal}/>
             );

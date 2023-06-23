@@ -23,7 +23,7 @@ const LoginForm = () => {
     resolver: zodResolver(loginFormSchema),
   });
 
-  const { userLogin, isLoading } = useContext(UserContext)
+  const { userLogin, isRequestLoading } = useContext(UserContext)
 
   const submit = (formData) => {
     userLogin(formData);
@@ -47,7 +47,7 @@ const LoginForm = () => {
           {...register("password")}
           error={errors.password}
         />
-        {isLoading ? (
+        {isRequestLoading ? (
           <StyledButtonLg buttoncolor="primary" type="submit">
             <UseAnimations animation={loading} strokeColor="white" />
           </StyledButtonLg>

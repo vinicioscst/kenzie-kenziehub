@@ -2,18 +2,27 @@ import { Route, Routes } from "react-router-dom";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
-import UserProvider from "../providers/UserContext";
 import TechProvider from "../providers/TechContext";
+import ProtectedRoutes from "../components/ProtectecRoutes";
+import PublicRoutes from "../components/PublicRoutes";
 
 const RoutesMain = () => {
   return (
-    <UserProvider>
     <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/home" element={<TechProvider><Home /></TechProvider>} />
+      <Route element={<PublicRoutes />}>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Route>
+
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/home" element={
+            <TechProvider>
+              <Home />
+            </TechProvider>
+          }
+        />
+      </Route>
     </Routes>
-    </UserProvider>
   );
 };
 

@@ -4,15 +4,18 @@ import "../node_modules/react-toastify/dist/ReactToastify.css";
 import { GlobalReset } from "./styles/reset";
 import { GlobalStyles } from "./styles/global";
 import { ToastContainer } from "react-toastify";
-import { useState } from "react";
+import { useContext } from "react";
+import { UserContext } from "./providers/UserContext";
 
 const App = () => {
+
+  const { loading } = useContext(UserContext)
 
   return (
     <>
       <GlobalReset />
       <GlobalStyles />
-      <RoutesMain />
+      {loading ? "" : <RoutesMain />}
       <ToastContainer theme="dark" />
     </>
   );
