@@ -19,22 +19,23 @@ const UserProvider = ({ children }) => {
 
     const loadUser = async () => {
       try {
-        setLoading(true)
+        setLoading(true);
         const { data } = await api.get("/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        setUserData(data)
-        navigate(currentPath)
+        setUserData(data);
+        navigate(currentPath);
       } catch (error) {
         toast.error(`${error.data.message}`);
       } finally {
-        setLoading(false)
-      }};
+        setLoading(false);
+      }
+    };
 
-    if(token) {
-      loadUser()
+    if (token) {
+      loadUser();
     }
   }, []);
 
@@ -54,14 +55,8 @@ const UserProvider = ({ children }) => {
     try {
       setIsRequestLoading(true);
       const { data } = await api.post("/sessions", formData);
-      localStorage.setItem(
-        "KENZIEHUB@TOKEN",
-        JSON.stringify(data.token)
-      );
-      localStorage.setItem(
-        "KENZIEHUB@USERID",
-        JSON.stringify(data.user.id)
-      );
+      localStorage.setItem("KENZIEHUB@TOKEN", JSON.stringify(data.token));
+      localStorage.setItem("KENZIEHUB@USERID", JSON.stringify(data.user.id));
       setUserData(data.user);
       toast.success("Login efetuado com sucesso!", {
         autoClose: 2000,

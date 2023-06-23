@@ -1,37 +1,35 @@
 import { styled } from "styled-components";
 
-
 export const StyledCard = styled.li`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 
-    width: 100%;
-    padding: 1.2rem;
+  width: 100%;
+  padding: 1.2rem;
 
-    background: var(--color-gray-4);
-    border-radius: 4px;
+  background: var(--color-gray-4);
+  border-radius: 4px;
 
-    cursor: pointer;
+  cursor: pointer;
 
+  transition: 0.2s;
+
+  & h3 {
+    color: var(--color-gray-0);
+  }
+
+  & p {
     transition: 0.2s;
-    
+  }
 
-    & h3 {
-        color: var(--color-gray-0);
-    }
+  &:hover {
+    background: var(--color-gray-2);
 
     & p {
-        transition: 0.2s;
+      color: var(--color-gray-0);
     }
-
-    &:hover{
-        background: var(--color-gray-2);
-
-        & p {
-            color: var(--color-gray-0);
-        }
-    }
-`
+  }
+`;

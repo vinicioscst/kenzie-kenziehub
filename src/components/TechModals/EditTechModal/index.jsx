@@ -18,7 +18,9 @@ const EditTechModal = ({ closeEditModal }) => {
   const {
     isEditing,
     registerEdit,
-    handleSubmitEdit, editTech, deleteTech,
+    handleSubmitEdit,
+    editTech,
+    deleteTech,
     currentTech,
   } = useContext(TechContext);
 
@@ -52,9 +54,8 @@ const EditTechModal = ({ closeEditModal }) => {
     };
   }, []);
 
-
   const submitEditTech = (formData) => {
-    editTech(formData)
+    editTech(formData);
   };
 
   const deleteEditTech = (techId) => {
@@ -79,20 +80,21 @@ const EditTechModal = ({ closeEditModal }) => {
                   value={currentTech.title}
                   disabled
                 />
-                <Select
-                  label="Status"
-                  {...registerEdit("status")}
-                >
+                <Select label="Status" {...registerEdit("status")}>
                   <option value="Iniciante">Iniciante</option>
                   <option value="Intermediário">Intermediário</option>
                   <option value="Avançado">Avançado</option>
                 </Select>
                 <StyledButtonLg buttoncolor="primary" type="submit">
-                    Salvar alterações
-                  </StyledButtonLg>
-                  <StyledButtonLg buttoncolor="default" type="button" onClick={() => deleteEditTech(`${currentTech.id}`)}>
-                    Excluir
-                  </StyledButtonLg>
+                  Salvar alterações
+                </StyledButtonLg>
+                <StyledButtonLg
+                  buttoncolor="default"
+                  type="button"
+                  onClick={() => deleteEditTech(`${currentTech.id}`)}
+                >
+                  Excluir
+                </StyledButtonLg>
               </form>
             </StyledModalContent>
           </StyledModalContainer>

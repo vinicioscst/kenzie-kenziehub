@@ -8,8 +8,7 @@ import { useContext } from "react";
 import { UserContext } from "./providers/UserContext";
 
 const App = () => {
-
-  const { loading } = useContext(UserContext)
+  const { loading } = useContext(UserContext);
 
   return (
     <>

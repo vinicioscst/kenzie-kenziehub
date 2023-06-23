@@ -19,9 +19,10 @@ const RegisterForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: zodResolver(registerFormSchema)  });
+    resolver: zodResolver(registerFormSchema),
+  });
 
-  const { userRegister } = useContext(UserContext)
+  const { userRegister } = useContext(UserContext);
 
   const submit = (formData) => {
     userRegister(formData);

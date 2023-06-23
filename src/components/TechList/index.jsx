@@ -10,14 +10,15 @@ import { StyledButtonIconMd } from "../../styles/buttons";
 import TechCard from "../TechCard";
 
 const TechList = () => {
-  const { techList, setIsAdding, setIsEditing, currentTech, setCurrentTech } = useContext(TechContext);
+  const { techList, setIsAdding, setIsEditing, currentTech, setCurrentTech } =
+    useContext(TechContext);
 
   const openAddModal = () => {
     setIsAdding(true);
   };
 
   const openEditModal = (tech) => {
-    setCurrentTech(tech)
+    setCurrentTech(tech);
     setIsEditing(true);
   };
 
@@ -34,7 +35,11 @@ const TechList = () => {
         <ul>
           {techList?.map((tech) => {
             return (
-              <TechCard key={tech.id} tech={tech} openEditModal={openEditModal}/>
+              <TechCard
+                key={tech.id}
+                tech={tech}
+                openEditModal={openEditModal}
+              />
             );
           })}
         </ul>

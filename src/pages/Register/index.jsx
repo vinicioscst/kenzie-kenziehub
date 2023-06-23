@@ -6,8 +6,8 @@ import { StyledContainerHeader, StyledRegisterContainer } from "./style";
 
 const Register = () => {
   useEffect(() => {
-    document.title = "Kenzie Hub | Cadastro"
-  }, [])
+    document.title = "Kenzie Hub | Cadastro";
+  }, []);
 
   return (
     <StyledRegisterContainer maxwidth={`calc(370px + 2.4rem)`}>
@@ -15,7 +15,7 @@ const Register = () => {
         <img src={Logo} alt="Kenzie Hub" />
         <StyledLinkMd to="/">Voltar</StyledLinkMd>
       </StyledContainerHeader>
-        <RegisterForm />
+      <RegisterForm />
     </StyledRegisterContainer>
   );
 };

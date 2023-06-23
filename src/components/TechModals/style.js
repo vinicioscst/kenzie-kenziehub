@@ -41,7 +41,7 @@ export const StyledModalHeader = styled.div`
 `;
 
 export const StyledModalContent = styled.div`
-    padding: 1.8rem 2rem 3.2rem;
+  padding: 1.8rem 2rem 3.2rem;
 
   background: var(--color-gray-3);
   border-radius: 0px 0px 4px 4px;

@@ -15,51 +15,45 @@ import { StyledButtonLg } from "../../../styles/buttons";
 import Select from "../../Select";
 
 const CreateTechModal = ({ closeAddModal }) => {
-    const {
-        isAdding,
-        register,
-        handleSubmit,
-        errors,
-        isValid,
-        createTech
-      } = useContext(TechContext);
-    
-      const modalRef = useRef(null);
-    
-      useEffect(() => {
-        const handleOutClick = (event) => {
-          if (!modalRef.current?.contains(event.target)) {
-            closeAddModal();
-          }
-        };
-    
-        window.addEventListener("mousedown", handleOutClick);
-    
-        return () => {
-          window.removeEventListener("mousedown", handleOutClick);
-        };
-      }, []);
-    
-      useEffect(() => {
-        const handleKeydown = (event) => {
-          if (event.key === "Escape") {
-            closeAddModal();
-          }
-        };
-    
-        window.addEventListener("keydown", handleKeydown);
-    
-        return () => {
-          window.removeEventListener("keydown", handleKeydown);
-        };
-      }, []);
-    
-      const submitAddTech = (formData) => {
-        createTech(formData);
-      };
+  const { isAdding, register, handleSubmit, errors, isValid, createTech } =
+    useContext(TechContext);
 
-    return (
-        <>
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutClick = (event) => {
+      if (!modalRef.current?.contains(event.target)) {
+        closeAddModal();
+      }
+    };
+
+    window.addEventListener("mousedown", handleOutClick);
+
+    return () => {
+      window.removeEventListener("mousedown", handleOutClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleKeydown = (event) => {
+      if (event.key === "Escape") {
+        closeAddModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+    };
+  }, []);
+
+  const submitAddTech = (formData) => {
+    createTech(formData);
+  };
+
+  return (
+    <>
       {isAdding ? (
         <StyledModal role="dialog">
           <StyledModalContainer ref={modalRef}>
@@ -101,8 +95,8 @@ const CreateTechModal = ({ closeAddModal }) => {
           </StyledModalContainer>
         </StyledModal>
       ) : null}
-      </>
-    )
-}
+    </>
+  );
+};
 
-export default CreateTechModal
+export default CreateTechModal;

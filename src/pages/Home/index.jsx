@@ -30,7 +30,7 @@ const Home = () => {
 
   const closeEditModal = () => {
     setIsEditing(false);
-    setCurrentTech(null)
+    setCurrentTech(null);
   };
 
   return (
@@ -51,7 +51,6 @@ const Home = () => {
         <TechList />
       </StyledHomeContentContainer>
 
-      
       <CreateTechModal closeAddModal={closeAddModal} />
       <EditTechModal closeEditModal={closeEditModal} />
     </>

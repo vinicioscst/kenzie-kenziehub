@@ -23,7 +23,7 @@ const LoginForm = () => {
     resolver: zodResolver(loginFormSchema),
   });
 
-  const { userLogin, isRequestLoading } = useContext(UserContext)
+  const { userLogin, isRequestLoading } = useContext(UserContext);
 
   const submit = (formData) => {
     userLogin(formData);
