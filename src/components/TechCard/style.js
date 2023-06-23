@@ -5,6 +5,8 @@ export const StyledCard = styled.li`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 
     width: 100%;
     padding: 1.2rem;

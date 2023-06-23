@@ -10,13 +10,14 @@ import { StyledButtonIconMd } from "../../styles/buttons";
 import TechCard from "../TechCard";
 
 const TechList = () => {
-  const { techList, setIsAdding, setIsEditing } = useContext(TechContext);
+  const { techList, setIsAdding, setIsEditing, currentTech, setCurrentTech } = useContext(TechContext);
 
   const openAddModal = () => {
     setIsAdding(true);
   };
 
-  const openEditModal = () => {
+  const openEditModal = (tech) => {
+    setCurrentTech(tech)
     setIsEditing(true);
   };
 

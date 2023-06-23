@@ -27,6 +27,10 @@ export const StyledInput = styled.input`
     border: 1.22px solid var(--color-gray-0);
   }
 
+  &:disabled {
+    color: var(--color-gray-1);
+  }
+
   &::placeholder {
     color: var(--color-gray-1);
   }

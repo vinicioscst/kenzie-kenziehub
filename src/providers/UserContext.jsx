@@ -52,7 +52,8 @@ const UserProvider = ({children}) => {
         toast.success("Logout efetuado com sucesso!", {
           autoClose: 2000,
         });
-        localStorage.clear();
+        localStorage.removeItem("KENZIEHUB@USERID");
+        localStorage.removeItem("KENZIEHUB@TOKEN");
         setUserData(null);
         navigate("/");
       };

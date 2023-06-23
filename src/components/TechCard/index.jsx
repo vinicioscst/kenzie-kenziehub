@@ -4,7 +4,7 @@ import { StyledCard } from "./style"
 
 const TechCard= ({tech, openEditModal}) => {
     return (
-        <StyledCard onClick={openEditModal}>
+        <StyledCard onClick={() => openEditModal(tech)}>
             <StyledTitle3>{tech.title}</StyledTitle3>
             <StyledHeadline>{tech.status}</StyledHeadline>
         </StyledCard>

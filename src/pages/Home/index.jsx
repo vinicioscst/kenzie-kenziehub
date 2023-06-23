@@ -8,16 +8,17 @@ import {
   StyledHomeHeaderSection,
 } from "./style";
 import { StyledHeadline } from "../../styles/typography";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
 import TechList from "../../components/TechList";
 import { useEffect } from "react";
 import { TechContext } from "../../providers/TechContext";
-import TechModals from "../../components/TechModals";
+import CreateTechModal from "../../components/TechModals/CreateTechModal";
+import EditTechModal from "../../components/TechModals/EditTechModal";
 
 const Home = () => {
   const { userData, userLogout } = useContext(UserContext);
-  const { setIsAdding, setIsEditing } = useContext(TechContext);
+  const { setIsAdding, setIsEditing, setCurrentTech } = useContext(TechContext);
 
 
   useEffect(() => {
@@ -30,6 +31,7 @@ const Home = () => {
 
   const closeEditModal = () => {
     setIsEditing(false);
+    setCurrentTech(null)
   };
 
   return (
@@ -50,8 +52,9 @@ const Home = () => {
         <TechList />
       </StyledHomeContentContainer>
 
-
-      <TechModals closeAddModal={closeAddModal} closeEditModal={closeEditModal}/>
+      
+      <CreateTechModal closeAddModal={closeAddModal} />
+      <EditTechModal closeEditModal={closeEditModal} />
     </>
   );
 };
