@@ -49,7 +49,7 @@ export const LgButtonStyles = css`
           }
 
           &:disabled {
-            background: var(--color-primary-disabled);
+            background: var(--color-primary-disable);
           }
         `;
 

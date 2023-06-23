@@ -22,11 +22,33 @@ export const StyledModalContainer = styled.div`
 `;
 
 export const StyledModalHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.2rem 2rem;
+
   background: var(--color-gray-2);
   border-radius: 4px 4px 0px 0px;
+
+  & h3 {
+    color: var(--color-gray-0);
+  }
+
+  & img {
+    cursor: pointer;
+  }
 `;
 
 export const StyledModalContent = styled.div`
+    padding: 1.8rem 2rem 3.2rem;
+
   background: var(--color-gray-3);
   border-radius: 0px 0px 4px 4px;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+  }
 `;

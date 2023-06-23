@@ -17,7 +17,7 @@ import TechModals from "../../components/TechModals";
 
 const Home = () => {
   const { userData, userLogout } = useContext(UserContext);
-  const { isAdding, setIsAdding, isEditing, setIsEditing } = useContext(TechContext);
+  const { setIsAdding, setIsEditing } = useContext(TechContext);
 
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Home = () => {
       </StyledHomeContentContainer>
 
 
-      <TechModals isAdding={isAdding} closeAddModal={closeAddModal} isEditing={isEditing} closeEditModal={closeEditModal}/>
+      <TechModals closeAddModal={closeAddModal} closeEditModal={closeEditModal}/>
     </>
   );
 };
