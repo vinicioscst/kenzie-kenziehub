@@ -12,6 +12,11 @@ export const StyledTechListHeader = styled.div`
     align-items: center;
 
     width: 100%;
+
+    img {
+      padding: 0;
+      margin: 0;
+    }
 `
 
 export const StyledTechListSection = styled.section`   

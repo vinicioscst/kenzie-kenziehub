@@ -94,11 +94,11 @@ export const StyledLinkMd = styled(Link)`
 export const StyledButtonIconMd = styled.button`
   ${ButtonStyles};
   ${MdButtonStyles}
-  padding: 1.15rem;
+  padding: 1.2rem;
 `;
 
 export const StyledLinkIconMd = styled(Link)`
   ${ButtonStyles};
   ${MdButtonStyles}
-  padding: 1.15rem;
+  padding: 1.2rem;
 `;

@@ -10,13 +10,21 @@ import { StyledButtonIconMd } from "../../styles/buttons";
 import TechCard from "../TechCard";
 
 const TechList = () => {
-  const { techList, setTechList } = useContext(TechContext);
+  const { techList, setIsAdding, setIsEditing } = useContext(TechContext);
+
+  const openAddModal = () => {
+    setIsAdding(true);
+  };
+
+  const openEditModal = () => {
+    setIsEditing(true);
+  };
 
   return (
     <>
       <StyledTechListHeader>
         <StyledTechListH2>Tecnologias</StyledTechListH2>
-        <StyledButtonIconMd>
+        <StyledButtonIconMd onClick={openAddModal}>
           <img src={Add} alt="Adicionar tecnologia" />
         </StyledButtonIconMd>
       </StyledTechListHeader>
@@ -25,7 +33,7 @@ const TechList = () => {
         <ul>
           {techList.map((tech) => {
             return (
-              <TechCard key={tech.id} tech={tech}/>
+              <TechCard key={tech.id} tech={tech} openEditModal={openEditModal}/>
             );
           })}
         </ul>

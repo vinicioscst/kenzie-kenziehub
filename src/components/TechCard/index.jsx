@@ -2,9 +2,9 @@ import { StyledHeadline, StyledTitle3 } from "../../styles/typography"
 import { StyledCard } from "./style"
 
 
-const TechCard= ({tech}) => {
+const TechCard= ({tech, openEditModal}) => {
     return (
-        <StyledCard>
+        <StyledCard onClick={openEditModal}>
             <StyledTitle3>{tech.title}</StyledTitle3>
             <StyledHeadline>{tech.status}</StyledHeadline>
         </StyledCard>

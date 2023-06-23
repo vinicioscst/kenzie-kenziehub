@@ -8,6 +8,9 @@ export const TechContext = createContext({})
 
 const TechProvider = ({children}) => {
     const [techList, setTechList] = useState([]);
+    const [ isAdding, setIsAdding ] = useState(false)
+    const [ isEditing, setIsEditing ] = useState(false)
+
     const { userData } = useContext(UserContext)
 
     useEffect(() => {
@@ -29,7 +32,7 @@ const TechProvider = ({children}) => {
     }
 
     return (
-        <TechContext.Provider value={{techList, setTechList}}>
+        <TechContext.Provider value={{techList, setTechList, isAdding, setIsAdding, isEditing, setIsEditing}}>
             {children}
         </TechContext.Provider>
     )
