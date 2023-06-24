@@ -13,6 +13,7 @@ import { useContext } from "react";
 import { TechContext } from "../../../providers/TechContext";
 import { StyledButtonLg } from "../../../styles/buttons";
 import Select from "../../Select";
+import { StyledButtonsContainer } from "./style";
 
 const EditTechModal = ({ closeEditModal }) => {
   const {
@@ -85,16 +86,18 @@ const EditTechModal = ({ closeEditModal }) => {
                   <option value="Intermediário">Intermediário</option>
                   <option value="Avançado">Avançado</option>
                 </Select>
-                <StyledButtonLg buttoncolor="primary" type="submit">
-                  Salvar alterações
-                </StyledButtonLg>
-                <StyledButtonLg
-                  buttoncolor="default"
-                  type="button"
-                  onClick={() => deleteEditTech(`${currentTech.id}`)}
-                >
-                  Excluir
-                </StyledButtonLg>
+                <StyledButtonsContainer>
+                  <StyledButtonLg buttoncolor="primary" type="submit">
+                    Salvar alterações
+                  </StyledButtonLg>
+                  <StyledButtonLg
+                    buttoncolor="default"
+                    type="button"
+                    onClick={() => deleteEditTech(`${currentTech.id}`)}
+                  >
+                    Excluir
+                  </StyledButtonLg>
+                </StyledButtonsContainer>
               </form>
             </StyledModalContent>
           </StyledModalContainer>

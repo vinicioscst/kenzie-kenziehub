@@ -13,8 +13,8 @@ import { UserContext } from "../../providers/UserContext";
 import TechList from "../../components/TechList";
 import { useEffect } from "react";
 import { TechContext } from "../../providers/TechContext";
-import CreateTechModal from "../../components/TechModals/CreateTechModal";
-import EditTechModal from "../../components/TechModals/EditTechModal";
+import CreateTechModal from "../../components/Modals/CreateTechModal";
+import EditTechModal from "../../components/Modals/EditTechModal";
 
 const Home = () => {
   const { userData, userLogout } = useContext(UserContext);

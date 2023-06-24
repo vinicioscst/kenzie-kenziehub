@@ -4,7 +4,7 @@ import { api } from "../services/api";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { createTechSchema } from "../components/TechModals/createTechSchema";
+import { createTechSchema } from "../components/Modals/createTechSchema";
 
 export const TechContext = createContext({});
 
